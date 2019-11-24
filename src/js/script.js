@@ -8,21 +8,32 @@ When winner, subtracts from losing player.hand array and adds to winning player.
 Calls self again as long as player[index].card[] > 0
 playerAdd method to players[] array
 */
-constructor () {
-    let players = []
+constructor (name,players) {
+    this.name = name;
+    this.players = [players]
 
     }
-    addPlayer() {
-
+    addPlayer(Player) {
+        if (this.players.length == 2){
+        console.log("Game full, fight!")
+        } else {
+            this.players.push(Player);
+        }
+        return console.log("Player added!");
     }
-    removePlayer() {
-
-    }
-    fightPlayer(){
-
+    removePlayer(Player) {
+        this.players.splice(this.players.indexOf(Player.name), 1)
+        return console.log(`Player ${Player.name} defeated!`);
+    }   
+    fightPlayer(Player){
+        if (this.players[0].hand[0].value > this.players[1].hand[0].value) {
+        this.players[1].hands.shift();
+        } else if (this.players[0].hand[0].value < this.players[1].hand[0].value) {
+            this.players[0].hands.shift();
+        } else this.tiePlayer(); 
     }
     tiePlayer(){
-        
+
     }
 
 }
@@ -34,8 +45,12 @@ contains method for adding a hand
 contains a method for removing card
 contains a method for adding card
 */
-    constructor(){
-        this.hand = []
+    constructor(name,hand){
+        this.name = name;
+        this.hand = hand;
+        this.tieHand = list.slice(0)
+        //Writing function for the tie hand for comparisons
+        
     }
 }
 
