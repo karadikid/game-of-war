@@ -19,6 +19,9 @@ contains method for adding a hand
 contains a method for removing card
 contains a method for adding card
 */
+    constructor(){
+        this.hand = []
+    }
 }
 
 class Deck {
@@ -31,6 +34,7 @@ Contains method for generating hand
     constructor() {
 
     this.cards =[]
+    this.hands = []
 
     let suit = ["clubs","diamonds","hearts","spades"]
     let rank = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]
@@ -58,6 +62,12 @@ Contains method for generating hand
       
         return cards;
       }
+    createHands(cards) {
+        let hand1 = this.cards.splice(0, Math.floor(this.cards.length/2))
+        let hand2 = this.cards.splice((Math.floor+1)/2, this.cards.length)
+        this.hands = [hand1, hand2];
+        return this.hands;
+    }
 }
 
 class Card {
