@@ -8,7 +8,22 @@ When winner, subtracts from losing player.hand array and adds to winning player.
 Calls self again as long as player[index].card[] > 0
 playerAdd method to players[] array
 */
+constructor () {
+    let players = []
 
+    }
+    addPlayer() {
+
+    }
+    removePlayer() {
+
+    }
+    fightPlayer(){
+
+    }
+    tiePlayer(){
+        
+    }
 
 }
 
