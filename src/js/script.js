@@ -1,6 +1,3 @@
-console.log("hello!");
-
-
 class Game {
 /* 
 Contains players array of 2 items
@@ -37,30 +34,30 @@ Contains method for generating hand
 
     let suit = ["clubs","diamonds","hearts","spades"]
     let rank = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]
-    let value = [1,2,3,4,5,6,7,8,9,10,11,12,13]
-    forEach.rank((rank, value) => {
-        forEach.suit(suit => this.cards.push(new Card(rank, suit, value)))
+    // let value = [1,2,3,4,5,6,7,8,9,10,11,12,13]
+    rank.forEach((rank, value) => {
+        suit.forEach(suit => this.cards.push(new Card(rank, suit, value)))
         } 
         )
     }
-    shuffle(cards) {
-        var currentIndex = cards.length, temporaryValue, randomIndex;
+    // shuffle(cards) {
+    //     var currentIndex = cards.length, temporaryValue, randomIndex;
       
-        // While there remain elements to shuffle...
-        while (0 !== currentIndex) {
+    //     // While there remain elements to shuffle...
+    //     while (0 !== currentIndex) {
       
-          // Pick a remaining element...
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex -= 1;
+    //       // Pick a remaining element...
+    //       randomIndex = Math.floor(Math.random() * currentIndex);
+    //       currentIndex -= 1;
       
-          // And swap it with the current element.
-          temporaryValue = cards[currentIndex];
-          cards[currentIndex] = cards[randomIndex];
-          cards[randomIndex] = temporaryValue;
-        }
+    //       // And swap it with the current element.
+    //       temporaryValue = cards[currentIndex];
+    //       cards[currentIndex] = cards[randomIndex];
+    //       cards[randomIndex] = temporaryValue;
+    //     }
       
-        return array;
-      }
+    //     return cards;
+    //   }
 }
 
 class Card {
@@ -68,7 +65,7 @@ class Card {
 Contains property of card rank
 Contains property of card value
 */
-    constructor(){
+    constructor(rank, suit, value){
         this.rank = rank;
         this.suit = suit;
         this.value = value;
