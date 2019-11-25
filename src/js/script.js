@@ -144,3 +144,12 @@ Game1 = new Game("Game 1", Player1);
 Game1.addPlayer(Player2);
 Game1.fightPlayer();
 Game1.players;
+
+//CSS BEGIN
+let player1CurrentCard = Game1.players[0].hand[0];
+console.log(Game1.players[0].hand[0]);
+let player2CurrentCard = Game1.players[1].hand[1];
+console.log(Game1.players[1].hand[0]);
+
+document.querySelector("#player1CurrentCard").innerHTML = player1CurrentCard;
+document.querySelector("#player2CurrentCard").innerHTML = player2CurrentCard;
