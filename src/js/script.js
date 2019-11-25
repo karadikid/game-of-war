@@ -32,12 +32,19 @@ constructor (name,players) {
         this.tieHand2 = this.players[1].hand.slice(1,4);
         console.log(this.tieHand2);
         if (this.players[0].hand[0].value > this.players[1].hand[0].value) {
-        this.players[1].hands.shift();
+        this.cardTransferSingle(this.players[0], this.players[1]);
+        console.log(this.players[0])
+        console.log(this.players[1])
         } else if (this.players[0].hand[0].value < this.players[1].hand[0].value) {
-            this.players[0].hands.shift();
+            this.cardTransferSingle(Player2, Player1);
         } else this.tiePlayer(); 
     }
     tiePlayer(){
+    }
+    cardTransferSingle(winner, loser){
+        winner.hand.push(loser.hand.pop())
+        // console.log(this.loser.hand[0])
+        // //this.winner.hand.card.push(this.loser.hand[0].card);
     }
 
 }
@@ -125,3 +132,6 @@ Player2 = new Player("Player 2", deck.hands[1]);
 console.log(Player1);
 console.log(Player2);
 
+Game1 = new Game("Game 1", Player1);
+Game1.addPlayer(Player2);
+Game1.fightPlayer();
