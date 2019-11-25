@@ -145,6 +145,8 @@ Game1.addPlayer(Player2);
 Game1.fightPlayer();
 Game1.players;
 
+document.querySelector('#next-round').addEventListener('click', Game1.fightPlayer);
+
 //CSS BEGIN
 let player1CurrentCard = Game1.players[0].hand[0];
 console.log(Game1.players[0].hand[0]);
