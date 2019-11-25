@@ -46,12 +46,15 @@ constructor (name,players) {
             this.players[0].hand.push(...this.tieHand1);
             console.log(this.players[0].hand + 'tiePlayer');
             console.log(this.players[1].hand + 'tiePlayer');
+        } else {
+            this.tiePlayer(tieHand1, tieHand2);
         }
     }
     cardTransferSingle(winner, loser){
         // console.log(this.winner.hand[0] + 'cardTransferSingle');
         // console.log(this.loser.hand[0] + 'cardTransferSingle');
         winner.hand.push(loser.hand.shift())
+        //WINNER CARD NEEDS TO GO TO BOTTOM OF DECK BEFORE/AFTER LOSERS
         // console.log(this.loser.hand[0])
         // //this.winner.hand.card.push(this.loser.hand[0].card);
     }
@@ -146,7 +149,7 @@ Game1.addPlayer(Player2);
 Game1.fightPlayer();
 Game1.players;
 
-document.querySelector('#next-round').addEventListener('click', Game1.fightPlayer);
+document.querySelector('#next-round').addEventListener('click', Game1.fightPlayer());
 
 //CSS BEGIN
 let player1CurrentCard = Game1.players[0].hand[0];
@@ -156,3 +159,4 @@ console.log(Game1.players[1].hand[0]);
 
 document.querySelector("#player1CurrentCard").innerHTML = JSON.stringify(player1CurrentCard);
 document.querySelector("#player2CurrentCard").innerHTML = JSON.stringify(player2CurrentCard);
+
