@@ -28,20 +28,26 @@ constructor (name,players) {
     }   
     fightPlayer(Player){
         this.tieHand1 = this.players[0].hand.slice(1,4);
-        console.log(this.tieHand1);
+        // console.log(this.tieHand1);
         this.tieHand2 = this.players[1].hand.slice(1,4);
-        console.log(this.tieHand2);
+        // console.log(this.tieHand2);
         if (this.players[0].hand[0].value > this.players[1].hand[0].value) {
         this.cardTransferSingle(this.players[0], this.players[1]);
-        console.log(this.players[0])
-        console.log(this.players[1])
         } else if (this.players[0].hand[0].value < this.players[1].hand[0].value) {
-            this.cardTransferSingle(Player2, Player1);
-        } else this.tiePlayer(); 
+        this.cardTransferSingle(this.players[1], this.players[0]);
+        } else this.tiePlayer(this.tieHand1, this.tieHand2); 
     }
-    tiePlayer(){
+    //THIS IS WHERE THE CURRENT ERROR IS, I AM ALWAYS USING THE SAME HAND
+    tiePlayer(tieHand1, tieHand2){
+        if (this.tieHand1[0] > this.tieHand2[0]){
+            this.players[0].hand.push(...this.tieHand1);
+            console.log(this.players[0].hand + 'tiePlayer');
+            console.log(this.players[1].hand + 'tiePlayer');
+        }
     }
     cardTransferSingle(winner, loser){
+        console.log(winner.hand[0] + 'cardTransferSingle');
+        console.log(loser.hand[0] + 'cardTransferSingle');
         winner.hand.push(loser.hand.pop())
         // console.log(this.loser.hand[0])
         // //this.winner.hand.card.push(this.loser.hand[0].card);
