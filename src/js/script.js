@@ -11,7 +11,8 @@ playerAdd method to players[] array
 constructor (name,players) {
     this.name = name;
     this.players = [players]
-
+    this.tieHand1 = [];
+    this.tieHand2 = [];
     }
     addPlayer(Player) {
         if (this.players.length == 2){
@@ -26,6 +27,10 @@ constructor (name,players) {
         return console.log(`Player ${Player.name} defeated!`);
     }   
     fightPlayer(Player){
+        this.tieHand1 = this.players[0].hand.slice(1,4);
+        console.log(this.tieHand1);
+        this.tieHand2 = this.players[1].hand.slice(1,4);
+        console.log(this.tieHand2);
         if (this.players[0].hand[0].value > this.players[1].hand[0].value) {
         this.players[1].hands.shift();
         } else if (this.players[0].hand[0].value < this.players[1].hand[0].value) {
@@ -33,7 +38,6 @@ constructor (name,players) {
         } else this.tiePlayer(); 
     }
     tiePlayer(){
-
     }
 
 }
@@ -45,10 +49,9 @@ contains method for adding a hand
 contains a method for removing card
 contains a method for adding card
 */
-    constructor(name,hand){
+    constructor(name, hand){
         this.name = name;
         this.hand = hand;
-        this.tieHand = list.slice(0)
         //Writing function for the tie hand for comparisons
         
     }
@@ -111,4 +114,14 @@ Contains property of card value
         this.value = value;
     }
 }
+
+deck = new Deck;
+deck.shuffle();
+deck.createHands();
+
+Player1 = new Player("Player 1", deck.hands[0]);
+Player2 = new Player("Player 2", deck.hands[1]);
+
+console.log(Player1);
+console.log(Player2);
 
