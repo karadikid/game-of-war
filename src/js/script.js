@@ -26,15 +26,17 @@ constructor (name,players) {
         this.players.splice(this.players.indexOf(Player.name), 1)
         return console.log(`Player ${Player.name} defeated!`);
     }   
-    fightPlayer(Player){
+    fightPlayer(){
         this.tieHand1 = this.players[0].hand.slice(1,4);
         // console.log(this.tieHand1);
         this.tieHand2 = this.players[1].hand.slice(1,4);
         // console.log(this.tieHand2);
         if (this.players[0].hand[0].value > this.players[1].hand[0].value) {
         this.cardTransferSingle(this.players[0], this.players[1]);
+        console.log("Player 1");
         } else if (this.players[0].hand[0].value < this.players[1].hand[0].value) {
         this.cardTransferSingle(this.players[1], this.players[0]);
+        console.log("Player 2")
         } else this.tiePlayer(this.tieHand1, this.tieHand2); 
     }
     //THIS IS WHERE THE CURRENT ERROR IS, I AM ALWAYS USING THE SAME HAND
@@ -46,9 +48,9 @@ constructor (name,players) {
         }
     }
     cardTransferSingle(winner, loser){
-        console.log(winner.hand[0] + 'cardTransferSingle');
-        console.log(loser.hand[0] + 'cardTransferSingle');
-        winner.hand.push(loser.hand.pop())
+        // console.log(this.winner.hand[0] + 'cardTransferSingle');
+        // console.log(this.loser.hand[0] + 'cardTransferSingle');
+        winner.hand.push(loser.hand.shift())
         // console.log(this.loser.hand[0])
         // //this.winner.hand.card.push(this.loser.hand[0].card);
     }
@@ -141,3 +143,4 @@ console.log(Player2);
 Game1 = new Game("Game 1", Player1);
 Game1.addPlayer(Player2);
 Game1.fightPlayer();
+Game1.players;
