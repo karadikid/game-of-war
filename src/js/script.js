@@ -151,5 +151,5 @@ console.log(Game1.players[0].hand[0]);
 let player2CurrentCard = Game1.players[1].hand[1];
 console.log(Game1.players[1].hand[0]);
 
-document.querySelector("#player1CurrentCard").innerHTML = player1CurrentCard;
-document.querySelector("#player2CurrentCard").innerHTML = player2CurrentCard;
+document.querySelector("#player1CurrentCard").innerHTML = JSON.stringify(player1CurrentCard);
+document.querySelector("#player2CurrentCard").innerHTML = JSON.stringify(player2CurrentCard);
