@@ -27,6 +27,7 @@ constructor (name,players) {
         return console.log(`Player ${Player.name} defeated!`);
     }   
     fightPlayer(){
+        //CANNOT READ PROPERTY[0] UNDEFINED MONDAY MORNING
         this.tieHand1 = this.players[0].hand.slice(1,4);
         // console.log(this.tieHand1);
         this.tieHand2 = this.players[1].hand.slice(1,4);
@@ -39,7 +40,7 @@ constructor (name,players) {
         console.log("Player 2")
         } else this.tiePlayer(this.tieHand1, this.tieHand2); 
     }
-    //THIS IS WHERE THE CURRENT ERROR IS, I AM ALWAYS USING THE SAME HAND
+    //ERROR USING THE SAME HAND MONDAY MORNING
     tiePlayer(tieHand1, tieHand2){
         if (this.tieHand1[0] > this.tieHand2[0]){
             this.players[0].hand.push(...this.tieHand1);
