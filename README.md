@@ -1,4 +1,4 @@
-[![Virtual Nexus Logo](http://www.virtualnex.us/wp-content/uploads/2016/10/VN_Logo.png)](http://www.virtualnex.us)
+[![Virtual Nexus Logo](./VN_Logo.png)](http://www.virtualnex.us)
 
 # Game of War
 # Karadi Additions #
